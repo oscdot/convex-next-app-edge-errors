@@ -1,27 +1,24 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import '@/styles/globals.css'
-import { ClerkProvider } from '@clerk/nextjs'
-import ConvexProvider from '@/app/convex-provider'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Admin',
-}
+  title: "Admin",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
-      <ConvexProvider>
-        <html lang="en">
-          <body className={inter.className}>{children}</body>
-        </html>
-      </ConvexProvider>
+      <html lang='en'>
+        <body className={inter.className}>{children}</body>
+      </html>
     </ClerkProvider>
-  )
+  );
 }
